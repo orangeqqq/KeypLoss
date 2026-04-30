@@ -5,4 +5,11 @@ The precise and reliable quantitative analysis and visualization of tubular stru
 
 ![](/images/tspDice.png)
 
-The code will be available at the end of the paper review.
+# Acknowledgement
+This repository is built based on clDice repository.
+
+# Citation
+If you use our work, please consider citing:
+
+
+Yuntao Zhu, Ziwei Nie, Xiaoping Yang. TSP-Warp-X : A Novel Topological Shape Point Metric Warping Loss for Fully-Supervised and Weakly-Supervised Vessel Segmentation. TechRxiv. 09 May 2024.
