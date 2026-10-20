@@ -20,12 +20,24 @@ def compute_dice_coefficient(mask_gt, mask_pred):
     and the predicted mask `mask_pred`.
 
     Args:
-      mask_gt: 3-dim Numpy array of type bool. The ground truth mask.
-      mask_pred: 3-dim Numpy array of type bool. The predicted mask.
+      mask_gt: 3-dim Numpy array. The ground truth mask. If not bool, it will be
+        converted to bool.
+      mask_pred: 3-dim Numpy array. The predicted mask. If not bool, it will be
+        converted to bool.
 
     Returns:
       the dice coeffcient as float. If both masks are empty, the result is NaN
     """
+    # 统一转换成 numpy 数组
+    mask_gt = np.asarray(mask_gt)
+    mask_pred = np.asarray(mask_pred)
+
+    # 如果不是 bool 类型，则转换成 bool 类型
+    if mask_gt.dtype != np.bool_:
+        mask_gt = mask_gt.astype(bool)
+    if mask_pred.dtype != np.bool_:
+        mask_pred = mask_pred.astype(bool)
+
     volume_sum = mask_gt.sum() + mask_pred.sum()
     if volume_sum == 0:
         return np.NaN
